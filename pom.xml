@@ -221,27 +221,6 @@
           </licenseMerges>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.owasp</groupId>
-        <artifactId>dependency-check-maven</artifactId>
-        <version>${maven.dependencyCheck.version}</version>
-        <executions>
-          <execution>
-            <id>check-vulnerabilities</id>
-            <goals>
-              <goal>aggregate</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <!-- The assembly analyzer is triggered but fails on Linux because it requires mono. Deactivate it because this is Java and not .NET. -->
-          <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
-          <failBuildOnAnyVulnerability>true</failBuildOnAnyVulnerability>
-          <suppressionFiles>
-            <suppressionFile>buildConfig/vulnerability-suppression.xml</suppressionFile>
-          </suppressionFiles>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
